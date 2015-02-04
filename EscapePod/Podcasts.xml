@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPodcast xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"> 
+  <Podcast>
+    <Url>http://static.aboveandbeyond.nu/grouptherapy/podcast.xml</Url>
+    <Title>Above &amp; Beyond: Group Therapy</Title>
+  </Podcast>
+  <Podcast>
+    <Url>http://podcast.goonair.net/feed.xml</Url>
+    <Title>Giuseppe Ottaviani presents GO ON AIR</Title>
+  </Podcast>
+  <Podcast>
+    <Url>http://www.galexmusic.com/podcast/gareth.xml</Url>
+    <Title>The Gareth Emery Podcast</Title>
+  </Podcast>
+  <Podcast>
+    <Url>http://www.myonandshane54.com/id/idpodcast.xml</Url>
+    <Title>International Departures Podcast with Myon &amp; Shane 54</Title>
+  </Podcast>
+  <Podcast>
+    <Url>http://static.anjunadeep.com/edition/podcast.xml</Url>
+    <Title>The Anjunadeep Edition</Title>
+  </Podcast>
+  <Podcast>
+    <Url>http://www.solarstone.co.uk/listenAgain/deepblueradishow-podcast.xml</Url>
+    <Title>Solaris International with Solarstone</Title>
+  </Podcast>
+  <Podcast>
+    <Url>http://podcast.armadamusic.com/asot/podcast.xml</Url>
+    <Title>A State of Trance Official Podcast</Title>
+  </Podcast>
+  <Podcast>
+    <Url>http://tydi.com/podcast/tydi-podcast.xml</Url>
+    <Title>Global Soundsystem with tyDi » podcasts</Title>
+  </Podcast>
+</ArrayOfPodcast>

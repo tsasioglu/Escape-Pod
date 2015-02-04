@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="EscapePod.Controls.SymbolButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mocks="clr-namespace:EscapePod.Mocks"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="200"
+             d:DataContext="{d:DesignInstance Type=mocks:SymbolButtonViewModelMock, IsDesignTimeCreatable=True}">
+    <Button Height="20"
+            FontFamily="Segoe UI Symbol"
+            Background="MediumSeaGreen"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Bottom"
+            Command="{Binding DownloadCommand}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0"
+                       Text="{Binding Text}"
+                       VerticalAlignment="Center"
+                       FontFamily="Segoe UI Symbol"
+                       />
+            <TextBlock Grid.Column="1" 
+                       VerticalAlignment="Center"
+                       Text="{Binding SymbolCharacter}"
+                       FontFamily="Segoe UI Symbol" 
+                       />
+        </Grid>
+    </Button>
+</UserControl>
