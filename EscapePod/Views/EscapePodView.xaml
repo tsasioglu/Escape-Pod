@@ -13,6 +13,9 @@
         d:DesignHeight="600" d:DesignWidth="1200" 
         MinHeight="400" MinWidth="450"
         WindowState="Maximized"
+        BorderBrush="{DynamicResource AccentColorBrush}"
+        BorderThickness="1"
+        TitleCaps="False"
         ShowIconOnTitleBar="True"
         Icon="{Binding Icon}">
     <Window.Resources>
