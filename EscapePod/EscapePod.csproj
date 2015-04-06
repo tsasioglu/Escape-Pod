@@ -250,6 +250,7 @@
   <ItemGroup>
     <Resource Include="FodyWeavers.xml" />
     <Content Include="bin\EscapePod.exe" />
+    <Resource Include="img\screenshot.png" />
     <Content Include="Podcasts.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
