@@ -31,9 +31,7 @@ namespace EscapePod
             container.RegisterType<IDeserialisedRssProvider, DeserialisedRssProvider>();
             container.RegisterType<IDirectoryProvider, DirectoryProvider>();
             container.RegisterType<ICrashReporter, CrashReporter>();
-
-           
-
+            
             EscapePodView escapePodView = container.Resolve<EscapePodView>();
             escapePodView.Show();
         }
@@ -45,17 +43,17 @@ namespace EscapePod
                 if (!File.Exists(FlagLocation))
                 {
                     Directory.CreateDirectory(PodcastsLocation);
-                    using (WebClient Client = new WebClient())
+                    using (WebClient client = new WebClient())
                     {
-                        Client.DownloadFile("http://escapepod.azurewebsites.net/Podcasts.xml", "Podcasts.xml");
+                        client.DownloadFile("http://escapepod.azurewebsites.net/Podcasts.xml", "Podcasts.xml");
                     }
                     File.Copy("Podcasts.xml", PodcastsFileLocation);
                     File.Create(FlagLocation);
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
-
+                // ignored
             }
         }
 
