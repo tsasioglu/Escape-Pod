@@ -24,6 +24,7 @@
         </Grid.ColumnDefinitions>
         <Grid x:Name="Description"
               Grid.Row="0"
+              Margin="5"
               MaxHeight="100">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -39,7 +40,7 @@
             <Image Grid.Row="0"
                    Grid.Column="0"
                    Grid.RowSpan="4"
-                   Margin="2,2,2,2"
+                   Margin="2,2,7,2"
                    Source="{Binding ImageSource}" />
             <TextBlock Grid.Row="0"
                        Grid.Column="1"
@@ -79,7 +80,7 @@
                 <DataGridTemplateColumn Width="*" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Grid  MaxHeight="60" MinHeight="40">
+                            <Grid  MaxHeight="60" MinHeight="40" Margin="5,5,5,5">
                                 <Grid.RowDefinitions>
                                     <RowDefinition />
                                     <RowDefinition Height="*" MaxHeight="300" />
@@ -98,7 +99,7 @@
                                 <controls:MetroProgressBar Grid.Row="1"
                                                            VerticalAlignment="Bottom"
                                                            Opacity="0.3"
-                                                           Margin="0,0,10,0"
+                                                           Margin="-5,0,10,-5"
                                                            Value="{Binding Progress}"/>
                             </Grid>
                         </DataTemplate>
@@ -130,6 +131,7 @@
                                         Grid.Column="0"
                                         Width="110"
                                         Height="25"
+                                        Margin="0,0,5,0"
                                         Background="MediumSeaGreen"
                                         HorizontalAlignment="Left"
                                         VerticalAlignment="Bottom"

@@ -27,7 +27,7 @@
                 <DataGridTemplateColumn Width="*" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Grid  MaxHeight="100" MinHeight="40">
+                            <Grid  MaxHeight="100" MinHeight="40" Margin="10">
                                 <Grid.RowDefinitions>
                                     <RowDefinition />
                                     <RowDefinition Height="*" MaxHeight="300" />

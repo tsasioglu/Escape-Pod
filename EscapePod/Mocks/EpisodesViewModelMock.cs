@@ -84,7 +84,7 @@ namespace EscapePod.Mocks
 
             Episodes = new EpisodeViewModel[]
             {
-                new EpisodeViewModel(new DirectoryProvider(), Rss, Rss.channel.item[0]),
+                new EpisodeViewModel(new DirectoryProvider(), Rss, Rss.channel.item[0]) { Progress = 50 },
                 new EpisodeViewModel(new DirectoryProvider(), Rss, Rss.channel.item[1]),
                 
             };
