@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
+using System.Xml.Serialization;
 using EscapePod.Logging;
 using EscapePod.Model;
 using EscapePod.Providers;
@@ -38,7 +40,8 @@ namespace EscapePod.ViewModels
             }
 
             IsLoading = false;
-        }
+	        DownloadAllCommand = new DelegateCommand(DownloadAll);
+		}
         
         public void LoadPodcast(string podcastLink)
         {
@@ -85,7 +88,8 @@ namespace EscapePod.ViewModels
                 Episodes = episodes.ToArray();
 
                 IsLoading = false;
-            });
+	            OnPropertyChanged("IsDownloadAllEnabled");
+			});
         }
 
         private bool _isLoading;
@@ -115,8 +119,8 @@ namespace EscapePod.ViewModels
                 OnPropertyChanged("Summary");
                 OnPropertyChanged("Category");
                 OnPropertyChanged("Keywords");
-                OnPropertyChanged("Episodes");
-            }
+	            OnPropertyChanged("Episodes");
+			}
         }
 
         public BitmapImage ImageSource
@@ -234,5 +238,45 @@ namespace EscapePod.ViewModels
                 OnPropertyChanged();
             }
         }
-    }
+
+	    private bool _isDownloadingAll;
+
+
+	    public bool IsDownloadingAll
+		{
+		    get { return _isDownloadingAll; }
+		    set
+		    {
+			    _isDownloadingAll = value;
+			    OnPropertyChanged();
+			    OnPropertyChanged("IsDownloadAllEnabled");
+			}
+	    }
+
+		[XmlIgnore]
+		public ICommand DownloadAllCommand { get; set; }
+
+		public bool IsDownloadAllEnabled
+	    {
+			get
+			{
+				return Episodes != null 
+					&& !IsDownloadingAll
+					&& Episodes.Any(e => e.IsNotDownloaded) 
+					&& !Episodes.Any(e => e.IsDownloading);
+			}
+	    }
+
+	    public void DownloadAll(object o)
+	    {
+		    IsDownloadingAll = true;
+
+		    Parallel.ForEach(Episodes.Where(e => e.IsNotDownloaded), new ParallelOptions { MaxDegreeOfParallelism = 5 }, e =>
+		    {
+				e.Download(null);
+		    });
+
+		    IsDownloadingAll = false;
+	    }
+	}
 }

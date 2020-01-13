@@ -66,6 +66,33 @@
                        Grid.ColumnSpan="2"
                        VerticalAlignment="Top"
                        Text="{Binding Keywords}" />
+            <Button Grid.Row="3"
+                    Grid.Column="2"
+                    Width="110"
+                    Height="25"
+                    Margin="0,0,5,0"
+                    Background="MediumSeaGreen"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Command="{Binding DownloadAllCommand}"
+                    IsEnabled="{Binding IsDownloadAllEnabled, Mode=OneWay}" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" 
+                               Text="Download All"
+                               HorizontalAlignment="Right"
+                               FontFamily="Segoe UI"
+                               FontWeight="Bold"
+                               FontSize="10"/>
+                    <TextBlock Grid.Column="1" 
+                               Text="&#xE118;"
+                               FontFamily="Segoe UI Symbol"
+                               HorizontalAlignment="Left"/>
+                </Grid>
+            </Button>
         </Grid>
         <DataGrid x:Name="Episodes"
                   Grid.Row="1"
